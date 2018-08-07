@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>注册</title>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="icon" href="images/icon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icon/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="images/icon/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="images/icon/apple-touch-icon-196x196-precomposed.png">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".formarea li:last input[type='button']").click(function () {
+                alert("测试跳转效果，程序对接予以删除!");
+                location.href = "login.html";
+            });
+        });
+    </script>
+</head>
+<body>
+<!--header-->
+<header>
+    <a href="javascript:history.go(-1);" class="iconfont backIcon">&#60;</a>
+    <h1>注册</h1>
+</header>
+<ul class="formarea">
+    <li>
+        <input type="text" placeholder="请输入真实姓名" class="textbox"/>
+    </li>
+    <li>
+        <input type="text" placeholder="请输入身份证号" class="textbox"/>
+    </li>
+    <li>
+        <input type="tel" placeholder="请输入手机号码" class="textbox"/>
+    </li>
+    <li>
+        <input type="email" placeholder="请输入电子邮箱地址" class="textbox"/>
+    </li>
+    <li>
+        <input id="demo1" class="textbox" type="text" readonly="" placeholder="请选择详细地址" value="">
+        <input id="value1" type="hidden" value="20,234,504">
+    </li>
+    <li class="liLink">
+        <a href="article.html" class="fl">《用户协议》</a>
+        <a href="login.html" class="fr">已有账号，登陆</a>
+    </li>
+    <li>
+        <input type="button" value="立即注册"/>
+    </li>
+</ul>
+<script src="js/LAreaData1.js"></script>
+<script src="js/LArea.js"></script>
+<script>
+    var area1 = new LArea();
+    area1.init({
+        'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value1', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData //数据源
+    });
+    area1.value = [1, 13, 3];//控制初始位置，注意：该方法并不会影响到input的value
+    var area2 = new LArea();
+    area2.init({
+        'trigger': '#demo2',
+        'valueTo': '#value2',
+        'keys': {
+            id: 'value',
+            name: 'text'
+        },
+        'type': 2,
+        'data': [provs_data, citys_data, dists_data]
+    });
+</script>
+
+<script>
+    document.oncontextmenu = new Function("event.returnValue=false;");
+    document.onselectstart = new Function("event.returnValue=false;");
+</script>
+
+</body>
+</html>

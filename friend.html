@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>久优车</title>
+    <meta name="keywords" content="久优车">
+    <meta name="description" content="久优车">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/amazeui.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/jyc.css"/>
+</head>
+<body>
+<!--------------头部-------------------->
+<header data-am-widget="header" class="am-header am-header-default hd">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.go(-1);" class="">
+            <img class="am-header-icon-custom"
+                 src="data:image/svg+xml;charset&#x3D;utf-8,&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 12 20&quot;&gt;&lt;path d&#x3D;&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill&#x3D;&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                 alt=""/>
+        </a>
+    </div>
+    <h1 class="am-header-title">
+        好友
+    </h1>
+</header>
+<!--------------头部-------------------->
+<!--------------日期-------------------->
+<div class="am-alert am-alert-danger" id="my-alert" style="display: none">
+    <p>开始日期应小于结束日期！</p>
+</div>
+<div class="am-g" style="margin: 10px auto;">
+    <div class="am-u-sm-6 aniu">
+        <button type="button" class="am-btn am-btn-default am-margin-right" id="my-start"><span id="my-startDate">2014-12-20</span>
+        </button><!--  -->
+    </div>
+    <div style="float: left; margin: 10px -3px 0 3px"><p>—</p></div>
+    <div class="am-u-sm-6 aniu">
+        <button type="button" class="am-btn am-btn-default am-margin-right" id="my-end"><span
+                id="my-endDate">2014-12-25</span></button><!--  -->
+    </div>
+    &nbsp;&nbsp;<button type="button" class="am-btn am-btn-warning am-radius" style="background: #f56d19;">查询</button>
+</div>
+
+<!--------------日期-------------------->
+<!--------------联系人-------------------->
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <div class="am-list-news-bd">
+
+        <ul class="am-list" id="pp">
+
+            <li class="am-g am-list-item-dated" id="aa">
+                <a href="##" style="width: 49.5%; float: left;padding-right: 0;background:#f56d19;color: white;">名称</a>
+                <a href="##" style="width: 49.5%;float: right;padding-right: 0;background:#f56d19;color: white;">编号</a>
+            </li>
+            <li class="am-g am-list-item-dated">
+                <a href="##" class="am-list-item-hd ">好友</a>
+                <span class="am-list-date">001</span>
+            </li>
+            <li class="am-g am-list-item-dated">
+                <a href="##" class="am-list-item-hd ">好友</a>
+
+                <span class="am-list-date">001</span>
+
+
+            </li>
+            <li class="am-g am-list-item-dated">
+                <a href="##" class="am-list-item-hd ">好友</a>
+
+                <span class="am-list-date">001</span>
+
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!--------------联系人-------------------->
+
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/amazeui.min.js"></script>
+<script>
+    $(function () {
+        var startDate = new Date(2014, 11, 20);
+        var endDate = new Date(2014, 11, 25);
+        var $alert = $('#my-alert');
+        $('#my-start').datepicker().on('changeDate.datepicker.amui', function (event) {
+            if (event.date.valueOf() > endDate.valueOf()) {
+                $alert.find('p').text('开始日期应小于结束日期！').end().show();
+            } else {
+                $alert.hide();
+                startDate = new Date(event.date);
+                $('#my-startDate').text($('#my-start').data('date'));
+            }
+            $(this).datepicker('close');
+        });
+
+        $('#my-end').datepicker().on('changeDate.datepicker.amui', function (event) {
+            if (event.date.valueOf() < startDate.valueOf()) {
+                $alert.find('p').text('结束日期应大于开始日期！').end().show();
+            } else {
+                $alert.hide();
+                endDate = new Date(event.date);
+                $('#my-endDate').text($('#my-end').data('date'));
+            }
+            $(this).datepicker('close');
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <title>我的</title>
+    <meta name="keywords" content="KEYWORDS..."/>
+    <meta name="description" content="DESCRIPTION..."/>
+    <meta name="author" content="DeathGhost"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="icon" href="images/icon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icon/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="images/icon/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="196x196"
+          href="images/icon/apple-touch-icon-196x196-precomposed.png">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script>
+        function myFunction() {
+            alert("清除缓存成功！");
+        }
+    </script>
+</head>
+<body>
+<div class="userInfor">
+    <div class="userIcon">
+        <img src="images/touxiang.png"/>
+        <h2>久优车会员</br></br>188****8888</h2>
+    </div>
+</div>
+<ul class="userList">
+    <li><a href="#.html" class="orderListIcon">个人信息</a></li>
+    <li><a href="#.html" class="collectionIcon">实名认证</a></li>
+    <li><a href="#.html" class="profileIcon">我的名片</a></li>
+</ul>
+<ul class="inforList">
+    <li><a href="address.html">消息通知</a><
+    <li><a onclick="myFunction()">清除缓存</a></li>
+    <li><a href="article.html">关于久优车</a></li>
+    <li><a href="javascript:;" onclick="document.getElementById('mcover').style.display='block';">分享给好友</a></li>
+    <li><a href="login.html" class="lastBtn">安全退出</a></li>
+    <div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;">
+        <img src="images/fenxiang.png">
+    </div>
+</ul>
+<nav>
+    <a href="index.html" class="homeIcon"><img src="images/nav01.png"/></br>首页</a>
+    <a href="category.html" class="categoryIcon"><img src="images/nav02.png"/></br>商城</a>
+    <a href="cart.html" class="cartIcon"><img src="images/nav03.png"/></br>财务</a>
+    <a href="user.html" class="userIcon" style="color:#f56d19;"><img src="images/nav004.png"/></br>我的</a>
+</nav>
+<script>
+    document.oncontextmenu = new Function("event.returnValue=false;");
+    document.onselectstart = new Function("event.returnValue=false;");
+</script>
+
+</body>
+</html>
